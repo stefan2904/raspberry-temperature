@@ -18,9 +18,9 @@ Connect the temperature sensor to your RPI [as described here](https://www.cl.ca
 Load the one-wire kernel module, setup the required pullup and define to which gpio pin your sensor is connected.
 You need to find [the right pin id](http://wiringpi.com/pins/). (For example the id of GPIO6 is 25.)
 
-The pullup is needed since the *DS18S20P* is being used in parasite power mode (See [Datasheet](http://pdfserv.maximintegrated.com/en/ds/DS18B20.pdf).
+The pullup is needed since the *DS18S20P* is being used in parasite power mode (See [Datasheet](http://pdfserv.maximintegrated.com/en/ds/DS18B20.pdf)).
 
-Add to your */boot/config.txt*:
+Add to your */boot/config.txt* (and reboot:)
 ```
 dtoverlay=w1-gpio,gpiopin=25,pullup=1
 ```
