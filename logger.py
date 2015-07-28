@@ -2,6 +2,7 @@ import time
 import r3temp
 import r3door
 import csv
+import subprocess
 
 temp = r3temp.getTemp()
 #print 'current temperature:', temp, 'degreeC'
@@ -15,3 +16,5 @@ row = [int(time.time()), temp, locked, kontakted]
 with open('temp_log.csv', 'a') as csvfile:
     logwriter = csv.writer(csvfile, delimiter=';',quotechar='|', quoting=csv.QUOTE_MINIMAL)
     logwriter.writerow(row)
+
+subprocess.call(['bash', './sync.sh'])
