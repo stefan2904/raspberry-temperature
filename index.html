@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <script type="text/javascript" src="js/dygraph-combined.js"></script>
+   <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="js/jquery.csv-0.71.min.js"></script>
+</head>
+<body>
+
+<div id="plot" style="width:100%;"></div>
+
+<script type="text/javascript">
+
+   data = [];
+
+   $(document).ready(function() {
+       $.ajax({
+           type: "GET",
+           url: "temp_log.csv",
+           dataType: "text",
+           success: function(csv) { data = $.csv.toObjects(csv, {'separator':';'});  g.updateOptions( { } ); }
+        });
+   });
+
+   function getDataColor(idx) {
+      console.log(idx, data[idx]);
+      if(data.length > 0) {
+         if(data[idx].kontakted == "True") {
+            return "#f00";
+         } else {
+            return "#0f0";
+         }
+      }
+      else { return "#ff8c00"; }
+   }
+
+   var g = new Dygraph(
+               document.getElementById("plot"),
+               "temp_log.csv",
+              {
+                xValueFormatter: Dygraph.dateString_,
+                xValueParser: function(x) { return parseInt(x); },
+                xTicker: Dygraph.dateTicker,
+                delimiter: ';',
+                showRangeSelector: true,
+                 //animatedZooms: true,
+                drawPoints : true,
+                pointSize : 5,
+                highlightCircleSize: 8,
+                drawPointCallback : function(g, name, ctx, canvasx, canvasy, color, radius, idx) {
+                   ctx.beginPath();
+                   ctx.fillStyle = getDataColor(idx);
+                   ctx.arc(canvasx, canvasy, radius, 0, 2 * Math.PI, false);
+                   ctx.fill();
+                 }
+              });
+</script>
+
+</body>
+</html>
