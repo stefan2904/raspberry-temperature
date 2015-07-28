@@ -40,6 +40,6 @@ sudo modprobe w1-therm
 * **logger.py** provides the actual logging
 * **plot.py** creates a static plot of the logged data
 * **index.html** displays interactive web-version of the data
-* **sync.sh** synchronise (send) the newest measurement to a webserver (via ssh)
+* **sync.sh** synchronise (send) the newest measurement to a webserver (via ssh or git)
 * **r3door.py** provides a function to access the door-status of realraum
 * **r3temp.py** provides funcitonality to read the temperature maseured by the *DS18S20P*
