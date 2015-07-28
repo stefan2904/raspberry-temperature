@@ -1,5 +1,5 @@
 # raspberry-temperature
-measure (DS18S20P), log (python) &amp; plot (matlibplot/javascript) using raspberry pi
+measure (DS18S20P), log (python) &amp; plot (matplotlib/javascript) using raspberry pi
 
 ### WTF?
 
@@ -41,6 +41,5 @@ sudo modprobe w1-therm
 * **plot.py** creates a static plot of the logged data
 * **index.html** displays interactive web-version of the data
 * **sync.sh** synchronise (send) the newest measurement to a webserver (via ssh)
-
 * **r3door.py** provides a function to access the door-status of realraum
 * **r3temp.py** provides funcitonality to read the temperature maseured by the *DS18S20P*
