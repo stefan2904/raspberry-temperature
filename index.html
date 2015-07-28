@@ -39,6 +39,8 @@
                document.getElementById("plot"),
                "temp_log.csv",
               {
+                title: 'realraum Temperature',
+                ylabel: 'Temperature (C)',
                 xValueFormatter: Dygraph.dateString_,
                 xValueParser: function(x) { return parseInt(x); },
                 xTicker: Dygraph.dateTicker,
@@ -47,7 +49,7 @@
                  //animatedZooms: true,
                 drawPoints : true,
                 pointSize : 5,
-                highlightCircleSize: 8,
+                highlightCircleSize: 5,
                 drawPointCallback : function(g, name, ctx, canvasx, canvasy, color, radius, idx) {
                    ctx.beginPath();
                    ctx.fillStyle = getDataColor(idx);
