@@ -11,6 +11,6 @@ def loadTemp():
 def getTemp():
     while True:
         temp = loadTemp()
-        if temp is not 85:
+        if temp is not 85.0:
             break
     return temp
