@@ -42,7 +42,7 @@
                 title: 'realraum Temperature',
                 ylabel: 'Temperature (C)',
                 xValueFormatter: Dygraph.dateString_,
-                xValueParser: function(x) { return parseInt(x); },
+                xValueParser: function(x) { return parseInt(x) * 1000; },
                 xTicker: Dygraph.dateTicker,
                 delimiter: ';',
                 showRangeSelector: true,
