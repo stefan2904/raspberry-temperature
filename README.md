@@ -3,7 +3,9 @@ measure (DS18S20P), log (python) &amp; plot (matplotlib/javascript) using raspbe
 
 ### WTF?
 
-This scripts read and log the temperature and door status of [realraum Graz](http://realraum.at/).
+This scripts reads and logs the temperature and status of various sensors. 
+
+For example it is used to log the temperature and door status of [realraum Graz](http://realraum.at/). To see this in action visit [realraum.github.io/r3pi-temperature](http://realraum.github.io/r3pi-temperature) (and [check out the code](https://github.com/realraum/r3pi-temperature)).
 
 ### Setup
 
