@@ -3,9 +3,7 @@ import requests
 
 
 def getStatusByName(data, name):
-    for node in data['sensors']['door_locked']:
-        if node['name'] == name:
-            return node['value']
+    return filter(lambda x: x['name'] == name, data['sensors']['door_locked'])[0]['value']
 
 
 def getDoorstatus():
