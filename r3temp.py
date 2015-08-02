@@ -1,5 +1,5 @@
 def loadTemp():
-    tfile = open("/sys/bus/w1/devices/10-0008010918f7/w1_slave")
+    tfile = open("/sys/bus/w1/devices/10-000801375be4/w1_slave")
     text = tfile.read()
     tfile.close()
     secondline = text.split("\n")[1]
